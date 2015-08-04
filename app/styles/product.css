@@ -1,0 +1,17 @@
+.product{
+    margin-bottom: 2em;
+}
+.product-logo{
+    float: right;
+    margin: 0 0 1em 1em;
+}
+.screenshot-list{
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    height: 300px;
+}
+.other-products a{
+    text-decoration: underline;
+}

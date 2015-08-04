@@ -1,0 +1,47 @@
+<div class="product">
+    <div class="breadcrumb">
+        <a href="#">Accueil</a> >
+        <a href="#!/formations/{{product.fulltopic}}">Formations {{product.fulltopic}}</a> >
+        {{product.title}}
+    </div>
+
+    <h2>
+        Description
+    </h2>
+    <p>
+        <img class="product-logo" ng-src="{{product.image_logo_url}}">
+        {{product.description}}
+
+    </p>
+
+    <p>
+       Durée de la vidéo :
+        <strong>{{product.time | secondsToDateTime | date:'HH:mm:ss'}}</strong>
+    </p>
+
+    <p>
+        Date de mise en ligne :
+        <strong>{{product.publishDate}}</strong>
+    </p>
+
+
+    <h3>Apercu</h3>
+    <ul class="screenshot-list">
+        <li class="screenshot-list-item"ng-repeat="screenshot in product.screenshots">
+            <img ng-src="{{screenshot.url}}">
+        </li>
+    </ul>
+
+
+</div><!-- .product -->
+
+<div class="other-products" ng-show="otherProducts.length>1">
+    <h2>Toutes les formations {{titleLike}}</h2>
+    <ul class="list-products">
+        <li ng-repeat="otherProduct in otherProducts | orderBy:'title'" class="pbm">
+            <a href="#!/formation/{{otherProduct.vodeclic_id}}">
+                {{otherProduct.title}} <i>({{otherProduct.time | secondsToDateTime | date:'HH:mm:ss'}})</i>
+            </a>
+        </li>
+    </ul>
+</div><!-- .other-products -->

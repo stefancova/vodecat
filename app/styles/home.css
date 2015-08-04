@@ -1,0 +1,40 @@
+/*  =HOMEPAGE
+----------------------------------------------------------------------------- */
+.home-products {
+    text-align: center;
+}
+.list-item{
+    display: inline-block;
+    width: 48%;
+    margin: 1%;
+    background: #f8f8f8;
+    padding: 1em;
+    opacity: 0.8;
+    border: 1px solid transparent;
+    transition: all 250ms ease;
+}
+.list-item:hover{
+    background: #fff0fe;
+    border-color: #fad4f7;
+}
+.list-item a{
+    text-decoration: none;
+}
+.list-title{
+    font-weight: bold;
+}
+
+/*TABLET*/
+@media (min-width: 40em) {  /* 640px */
+    .list-item{
+        width: 31%;
+    }
+}
+
+/*DESKTOP*/
+@media (min-width: 60em) {  /* 960px */
+    .list-item{
+        width: 23%;
+    }
+
+}

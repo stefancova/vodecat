@@ -1,0 +1,208 @@
+/*  =HARD RESET
+----------------------------------------------------------------------------- */
+* {
+    margin:0;
+    padding:0;
+    vertical-align:baseline;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:Arial, Verdana, Helvetica, sans-serif;
+    font-size:100%; /* :INFO:1em = 16px for respond.js and ie8 */
+    margin:0;
+    height:100%;
+    color:#222;
+    background:#fff;
+    opacity: 1;
+
+}
+body[ng-cloak],
+.ng-cloak{
+    display: none !important;
+}
+
+input { height:auto; }
+a img, fieldset, form { border:0; }
+ins, abbr, acronym { text-decoration:none; border:0; font-style:normal; }
+a:hover ins, a:hover abbr, a:hover acronym { text-decoration:underline; }
+address { font-style:normal; }
+ul { list-style:none; }
+q:before, q:after { content:''; }
+small { font-size:0.9em; }
+input, select, textarea, button { font:1em Arial, Verdana, Helvetica, sans-serif; }
+textarea { overflow:auto; }
+
+sup { vertical-align:text-top; }
+
+button {
+    width:auto;
+    overflow:visible;
+    border:0;
+    background:none;
+    cursor:pointer;
+}
+
+input.submit {
+    width:auto !important;
+    height:auto !important;
+    cursor:pointer !important;
+    border:0 !important;
+    overflow:visible;
+}
+
+
+/*  =GENERIC (colors, backgrounds, titles, buttons, ...)
+----------------------------------------------------------------------------- */
+#content {
+    margin:0 2%;
+    position:relative;
+}
+#page {
+    padding-top: 100px;
+}
+a {
+    color:#222;
+    cursor:pointer;
+}
+h1{
+    font-size: 1.5em;
+    margin-bottom: 1.5em;
+}
+h2{
+    font-size: 1.2em;
+    margin-bottom: 1.2em;
+}
+h3{
+    font-size: 1.2em;
+    font-weight: normal;
+    margin-bottom: 1.2em;
+}
+p{
+    margin-bottom: 1em;
+}
+.breadcrumb{
+    margin-bottom: 1em;
+}
+/* MENU MOBILE OPEN */
+#site-mask {
+    position:fixed;
+    z-index:40;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    display:none;
+    background: #fff;
+    opacity: 0.7;
+}
+.menu-open #site-mask {
+    display:block;
+}
+
+
+/*  =HEADER
+----------------------------------------------------------------------------- */
+#header {
+    background: #fff;
+    padding: 0 6.25%;   /*20px*/
+    height: 71px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 50;
+}
+#header .logo {
+    margin-top: 12px;
+}
+.button-menu {
+    color: #c40452;
+    text-transform: uppercase;
+    border: solid 1px #c40452;
+    padding: 10px 10px 7px;
+    border-radius: 5px;
+    margin-top: 17px;
+    font: 0.875em arial, sans-serif; /*14px*/
+    outline: none;
+}
+.menu-open .button-menu {
+    background: #c40452;
+    color: #fff;
+}
+#header .menu {
+    position: absolute;
+    top: 71px;
+    left: 0;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+    display: none;
+    border: none;
+}
+
+.menu-open #header .menu{
+    display: block;
+}
+#header .menu li {
+    height: 49px;
+    background: #e7e7e8;
+    border-top: solid 1px #fff;
+    font: 1.125em/49px arial, sans-serif; /*18px*/
+    border-bottom: solid 1px #bec0c2;
+}
+#header .menu li:hover {
+    background: #cb3170;
+    border-top: solid 1px #cb3170;
+}
+#header .menu a {
+    display: block;
+    text-decoration: none;
+}
+#header .menu li:hover a {
+    color: #fff;
+}
+.main-content {
+    padding: 0 2%;
+}
+/* FOOTER */
+#footer{
+    margin-top: 2em;
+    background: pink;
+    padding: 1em;
+}
+
+/*TABLET*/
+@media (min-width: 60em) {  /* 640px */
+    #header {
+         padding: 0 5.20%;   /*40px*/
+     }
+    .button-menu {
+        display: none;
+    }
+    #header.expand .menu {
+        display: block !important;
+        top: 0;
+        left: auto;
+        right: 5.20%; /*40px*/
+        width: auto;
+    }
+    #header.expand .menu li {
+        height: 71px;
+        background: none;
+        border: none;
+        font: 0.875em/71px  arial, sans-serif; /*14px*/
+        float: left;
+        margin-left: 15px;
+    }
+    #header .menu li a:hover,
+    #header .menu li .active {
+        color: #b8074c;
+    }
+    .main-content {
+        background: linear-gradient(to bottom,  #f6f6f6 0%,#ffffff 13%); /* W3C */
+    }
+}
+
