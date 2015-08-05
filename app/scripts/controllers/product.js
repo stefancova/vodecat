@@ -1,18 +1,20 @@
 'use strict';
 
-app.controller('ProductCtrl', function ($scope, $routeParams, $location, dataService) {
+app.controller('ProductCtrl', function ($scope, $routeParams, dataService, config) {
 
     $scope.product = {};
     $scope.category = {};
     $scope.otherProducts = {};
     $scope.titleLike = '';
 
-
     /**
      * getTrainingById
      */
     var promise = dataService.getTrainingById($routeParams.id).then(function (data) {
-        console.log('ProductCtrl:getTrainingById', data);
+        if (config.debug) {
+            console.log('ProductCtrl:getTrainingById', data);
+        }
+
         $scope.product = data;
     });
 
@@ -23,7 +25,10 @@ app.controller('ProductCtrl', function ($scope, $routeParams, $location, dataSer
          * getTrainingLike
          */
         dataService.getTrainingLike($scope.titleLike).then(function (data) {
-            console.log('ProductCtrl:getTrainingLike', data);
+            if (config.debug) {
+                console.log('ProductCtrl:getTrainingLike', data);
+            }
+
             $scope.otherProducts = data;
         });
     });

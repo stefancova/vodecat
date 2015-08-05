@@ -2,7 +2,7 @@
     <h1 class="title">Nos meilleurs formations</h1>
     <ul class="list line">
         <li class="list-item" ng-repeat="best in bests | orderBy:'fulltopic'">
-            <a href="#!/formation/{{best.vodeclic_id}}">
+            <a href="#/formation/{{best.vodeclic_id}}">
                 <p class="list-title">{{best.title}}</p>
                 <img ng-src="{{best.image_logo_url}}" alt="{{best.title | htmlToPlaintext}}">
                 <p class="list-topic">{{best.fulltopic}}</p>

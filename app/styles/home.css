@@ -14,14 +14,22 @@
     transition: all 250ms ease;
 }
 .list-item:hover{
-    background: #fff0fe;
     border-color: #fad4f7;
+}
+.list-item img{
+    height: 110px;
+    transform: scale(0.9);
+    transition: 150ms ease-out 0s;
+}
+.list-item:hover img{
+    transform: scale(1);
 }
 .list-item a{
     text-decoration: none;
 }
 .list-title{
     font-weight: bold;
+    height: 36px;
 }
 
 /*TABLET*/

@@ -1,19 +1,14 @@
 'use strict';
 
-// Redirect # to #! (because QR codes url are like this http://www.lg-economie-energie.com/#/liste-produits/LGGC5629PS)
-var hash = window.location.hash;
-if ( hash.indexOf('#/') > -1) {
-    window.location.hash = hash.replace('#','#!');
-}
-
 // Define app
-var app = angular.module('clientApp', ['ngResource', 'ngSanitize', 'ngRoute', 'menuMobile']);
+var app = angular.module('clientApp', ['ngResource', 'ngSanitize', 'ngRoute', 'ngAnimate', 'menuMobile']);
 
-app.config(function ($routeProvider, $locationProvider) {
+// Router config
+app.config(function ($routeProvider) {
     $routeProvider
         .when('/', {
-            templateUrl: 'views/main.html',
-            controller: 'MainCtrl'
+            templateUrl: 'views/home.html',
+            controller: 'HomeCtrl'
         })
         .when('/formations/:id', {
             templateUrl: 'views/category.html',
@@ -26,7 +21,11 @@ app.config(function ($routeProvider, $locationProvider) {
         .otherwise({
             redirectTo: '/'
         });
-
-    $locationProvider.html5Mode(false).hashPrefix('!');
 });
+
+// Constant config
+app.constant('config', {
+    debug: false
+});
+
 

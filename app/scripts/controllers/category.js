@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('CategoryCtrl', function ($scope, $routeParams, dataService)  {
+app.controller('CategoryCtrl', function ($scope, $routeParams, dataService, config)  {
 
     $scope.trainings = {};
     $scope.category = '';
@@ -11,8 +11,9 @@ app.controller('CategoryCtrl', function ($scope, $routeParams, dataService)  {
      * getTrainingByCategory
      */
     dataService.getTrainingByCategory($routeParams.id).then(function (data) {
-
-        console.log('ListCtrl:getTrainingByCategory', data);
+        if (config.debug) {
+            console.log('ListCtrl:getTrainingByCategory', data);
+        }
 
         $scope.trainings = data;
         $scope.category = $routeParams.id;

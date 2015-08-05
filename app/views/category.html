@@ -10,8 +10,8 @@
     <input type="text" placeholder="" ng-model="searchText.title">
 </p>
 <ul class="category-list">
-    <li class="category-list-item" ng-repeat="training in trainings | orderBy:'title' | filter:searchText" class="category" ng-animate="animate">
-        <a href="#!/formation/{{training.vodeclic_id}}">
+    <li class="category-list-item" ng-repeat="training in trainings | orderBy:'title' | filter:searchText">
+        <a href="#/formation/{{training.vodeclic_id}}">
             <h2 class="training-title">
                 <img class="training-logo" ng-src="{{training.image_logo_url}}" alt="{{training.title | htmlToPlaintext}}">
                 {{training.title}}

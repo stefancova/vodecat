@@ -1,7 +1,7 @@
 <div class="product">
     <div class="breadcrumb">
         <a href="#">Accueil</a> >
-        <a href="#!/formations/{{product.fulltopic}}">Formations {{product.fulltopic}}</a> >
+        <a href="#/formations/{{product.fulltopic}}">Formations {{product.fulltopic}}</a> >
         {{product.title}}
     </div>
 
@@ -11,7 +11,6 @@
     <p>
         <img class="product-logo" ng-src="{{product.image_logo_url}}">
         {{product.description}}
-
     </p>
 
     <p>
@@ -39,7 +38,7 @@
     <h2>Toutes les formations {{titleLike}}</h2>
     <ul class="list-products">
         <li ng-repeat="otherProduct in otherProducts | orderBy:'title'" class="pbm">
-            <a href="#!/formation/{{otherProduct.vodeclic_id}}">
+            <a href="#/formation/{{otherProduct.vodeclic_id}}">
                 {{otherProduct.title}} <i>({{otherProduct.time | secondsToDateTime | date:'HH:mm:ss'}})</i>
             </a>
         </li>
